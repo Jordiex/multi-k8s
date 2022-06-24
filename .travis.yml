@@ -21,15 +21,15 @@ after_succes:
   - docker push jxrdy/multi-server
   - docker push jxrdy/multi-worker
 
-  deploy:
-    provider: elasticbeanstalk
-    region: 'eu-west-1'
-    app: 'multi-docker'
-    env: 'Multidocker-env-1'
-    bucket_name: 'elasticbeanstalk-eu-west-1-637174301702'
-    bucket_path: 'docker-multi'
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-1'
+  app: 'multi-docker'
+  env: 'Multidocker-env-1'
+  bucket_name: 'elasticbeanstalk-eu-west-1-637174301702'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: $AWS_SECRET_KEY
